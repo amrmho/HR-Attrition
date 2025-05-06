@@ -3,7 +3,8 @@ import pandas as pd
 import pickle
 import xgboost
 
-data = pickle.load('HR.sav', 'rb')
+with open('HR.sav', 'rb') as file:
+    data = pickle.load(file)
 
 st.title("HR Employee Attrition")
 st.image("https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hVmDd7kBxo2z2FmH8Auvlg.png", width=500)
