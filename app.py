@@ -143,7 +143,7 @@ if st.button("Predict attrition"):
         if EnvironmentSatisfaction < 3:
             suggestions.append("Enhance work environment.")
         if RelationshipSatisfaction < 3:
-            suggestions.append("Improve interpersonal relationships.")
+            suggestions.append("Improve relationship satisfaction.")
 
         st.markdown("### Recommended Actions:")
         for tip in suggestions:
