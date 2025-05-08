@@ -129,7 +129,6 @@ if st.button("Predict attrition"):
     st.success(f"🔍 Predicted attrition: **{result}**")
 
     if result == "Yes":
-        st.warning("The employee is at risk of leaving. Suggested improvements:")
 
         suggestions = []
 
