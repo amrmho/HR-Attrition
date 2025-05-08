@@ -16,7 +16,7 @@ st.header("Fill in the Employee Information")
 
 # --- Prediction ---
 selected_items = pd.DataFrame({
-    "Age": [age],
+    "age": [age],
     "BusinessTravel": [BusinessTravel_selected_id],
     "Department": [Department_selected_id],
     "Education": [Education],
