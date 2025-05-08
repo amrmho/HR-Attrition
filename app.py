@@ -126,4 +126,26 @@ selected_items = pd.DataFrame({
 if st.button("Predict attrition"):
     pre = data.predict(selected_items)
     result = "Yes" if pre[0] == 1 else "No"
-    st.success(f"🔍 Expected to leave: **{result}**")
+    st.success(f"Predicted attrition: **{result}**")
+
+    if result == "Yes":
+        st.warning("The employee is at risk of leaving. Suggested improvements:")
+
+        suggestions = []
+
+        if JobSatisfaction < 3:
+            suggestions.append("Increase job satisfaction.")
+        if WorkLifeBalance < 3:
+            suggestions.append("Improve work-life balance.")
+        if OverTime_selected_id == 1:
+            suggestions.append("Reduce overtime hours.")
+        if YearsSinceLastPromotionCategory_selected_id >= 3:
+            suggestions.append("Consider promotion opportunities.")
+        if EnvironmentSatisfaction < 3:
+            suggestions.append("Enhance work environment.")
+        if RelationshipSatisfaction < 3:
+            suggestions.append("Improve interpersonal relationships.")
+
+        st.markdown("### Recommended Actions:")
+        for tip in suggestions:
+            st.markdown(f"- {tip}")
